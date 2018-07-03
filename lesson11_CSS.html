@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started wiht JAVA Script</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+    body, .jumbotron {padding:30px;}
+    .text-gaint {font-size: 40px;}
+    .btn-crazy {
+      position: absolute;
+      top: 30px;
+      left: 40%;
+      width: 20%;
+      transition: 0.9s linear all;
+
+    }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class = 'text-center'>
+      <button type = "button" class = "btn-crazy btn btn-danger">
+        Click me!
+      </button>
+      <button type = "button" class = "btn-crazy btn btn-primary">
+        Click me!
+      </button>
+      <button type = "button" class = "btn-crazy btn btn-success">
+        Click me!
+      </button>
+    </div>
+
+
+    <script>
+      //grab everything we need
+      const crazyBtns = document.querySelectorAll('.btn-crazy');
+
+
+      //difine functions('')
+      function goCrazy(e){
+
+        //enstead use of e - event it useful t use this
+        console.log(e);
+        const crazyBtn = e.target;
+        //get random nuber to left offset
+          //get num for top offset
+        const offsetLeft = Math.random() * (window.innerWidth - crazyBtn.clientWidth);
+        const offsetTop = Math.random() * (window.innerHeight- crazyBtn.clientHeight);
+
+        // const offsetLeft = Math.random() * (window.innerWidth - this.clientWidth);
+        // const offsetTop = Math.random() * (window.innerHeight- this.clientHeight);
+
+        //applay those nombers to the buttonsc
+        crazyBtn.style.top = offsetTop + "px";
+        crazyBtn.style.left = offsetLeft + "px";
+
+        // this.style.top = offsetTop + "px";
+        // this.style.left = offsetLeft + "px";
+
+
+      }
+      //add event listeneers
+      crazyBtns.forEach(button => button.addEventListener('mouseenter', goCrazy));
+
+    </script>
+
+
+
+
+
+  </body>
+</html>

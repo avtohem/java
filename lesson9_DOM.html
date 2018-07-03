@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started wiht JAVA Script</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <!-- option 1 -->
+
+    <div class="jumbotron text-center">
+      <h1>Hello, world!</h1>
+      <button class = "btn btn-danger" onclick="goCooCoo()">
+        Go C00C00
+      </button>
+      <button class = "btn btn-danger" onclick="goLigther()">
+        Go Lighter
+      </button>
+      <button class = "btn btn-danger" onclick="goWhite()">
+        Go White
+      </button>
+    </div>
+
+    <!--OPTION 2 use events directly on the elements in JS -->
+    <div class="jumbotron text-center">
+      <h1>Hello, world!</h1>
+      <button class = "btn btn-danger coffee-btn" onclick="goCooCoo()">
+        Go COFFEE
+      </button>
+      <button class = "btn btn-danger coffee-btn" onclick="goCooCoo()">
+        Go COFFEE
+      </button>
+      <button class = "btn btn-danger coffee-btn" onclick="goCooCoo()">
+        Go COFFEE
+      </button>
+    </div>
+
+    <!--OPTION 3use event listeners -->
+    <div class="jumbotron text-center">
+
+      <button class = "btn btn-primary lala-btn">
+        Not Listening
+      </button>
+
+    </div>
+
+    <script>
+
+    // 1 grab elements from the document
+
+    // 2 attach event listeners
+
+    function goCooCoo(){
+      //the same thingTL4
+      //document.body.style.backgroundColor = '#A44A44';
+      const body = document.querySelector('body');
+      body.style.backgroundColor = '#C00C00';
+    }
+    function goLigther(){
+      //the same thingTL4
+      //document.body.style.backgroundColor = '#A44A44';
+      const body = document.querySelector('body');
+      body.style.backgroundColor = '#A33A33';
+    }
+    function goWhite(){
+      //the same thingTL4
+      //document.body.style.backgroundColor = '#A44A44';
+      const body = document.querySelector('body');
+      body.style.backgroundColor = '#FFFFFF';
+    }
+
+    //OPTION 2 ==========================
+    // const  coffeeButton = document.querySelectorAll('.coffee-btn');
+    // coffeeButton.onclick = function(){
+    //   document.body.style.backgroundColor = '#C0FFEE';
+    // }
+    // coffeeButton.onmouseenter = goCooCoo;
+    const  coffeeButtons = document.querySelectorAll('.coffee-btn');
+    function getCoffee(){
+      document.body.style.backgroundColor = '#C0FFEE';
+    }
+    coffeeButtons.forEach(function(button){
+      button.onclick = getCoffee;
+    });
+    //OPTION3 =================================
+
+    const lalaButton = document.querySelector('.lala-btn');
+
+    function notListening(){
+      document.body.style.backgroundColor = '#1A1A1A';
+    }
+
+    lalaButton.addEventListener('click', notListening);
+    lalaButton.addEventListener('onmouseenter', notListening);
+
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => button.addEventListener('mouseleave', notListening));
+
+    </script>
+
+
+
+
+
+  </body>
+</html>

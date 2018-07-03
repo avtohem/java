@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started wiht JAVA Script</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <div class="jumbotron text-center">
+      <button type="button" class="btn btn-danger" onclick="sayHello('First button SAY')">
+        My Button
+      </button>
+    </div>
+
+    <div class="jumbotron text-center">
+      <button type="button" class="btn btn-danger" onmouseover="sayHello('SECOND button SAY')">
+        My Button
+      </button>
+    </div>
+
+    <script>
+    function sayHello(message = 'goodby', whisper = false){
+      if (whisper){
+          console.log(`%c${message}`,'font-size:5px');
+      } else {
+
+        console.log(message);
+      }
+
+    }
+
+    sayHello('hello',true);
+
+    sayHello();
+
+    sayHello('hello');
+
+
+    // function squared(a){
+    //   return a*a;
+    // }
+
+    const squared = function(a){
+      return a*a;
+    }
+
+    rect = squared
+
+    // anlog syntax
+
+    const cube = (a) => {
+      return a*a*a;
+    }
+
+    console.log(squared(3));
+
+
+    //in java function may be called BEFORE it's declared
+
+
+    punch();
+
+    function punch(){
+      console.log('Punch');
+    }
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started wiht JAVA Script</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <div class="dogs-list">
+      <h1>Hello, world!</h1>
+
+    </div>
+
+    <script>
+    // name = prompt('What is your name?');
+    username = 'crisoncode'
+      // //if
+      // if (name == 'Nick') {
+      //   alert('Hello!');
+      // }
+      // else if (name == 'holly') {
+      //   console.log("Name is Holly!!!");
+      // }
+      // else {
+      //   console.log('Not Nick');
+      // };
+
+      // for loop
+
+      const dogsList = document.querySelector('.dogs-list');
+      const dogs = [
+        {name: 'bruce', type: 'chihuahua'},
+        {name: 'chance', type: 'bernese'},
+        {name: 'eurostyle', type: 'shpitZ'}
+      ];
+
+      for (let i = 0; i < dogs.length; i++) {
+        // grabs our dogs
+        let dog = dogs[i];
+        const dogData = document.createElement('div');
+        dogData.classList.add('jumbotron', 'text-center');
+        dogData.innerText = `${dog.name} is a ${dog.type}`;
+        dogsList.appendChild(dogData);
+
+
+      }
+
+      // while loops looks similar
+
+      // for ... of iterator -- like phyton for item in iteritems
+
+
+      for (let dog of dogs) {
+        // let dog = dogs[i];
+        const dogData = document.createElement('div');
+        dogData.classList.add('jumbotron', 'text-center');
+        dogData.innerText = `${dog.name} is a ${dog.type}`;
+        dogsList.appendChild(dogData);
+      }
+
+
+    </script>
+
+  </body>
+</html>

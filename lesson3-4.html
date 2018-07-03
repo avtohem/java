@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started wiht JAVA Script</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  </head>
+  <body>
+
+
+
+    <script>
+      //String
+      'this is my string';
+      'my second string';
+      "else one string";
+
+      console.log(Boolean(''));
+      //objects - like dictionary in Python
+      const user = {
+        name: 'Chris',
+        username: 'chriscode'
+      };
+      //array - like list in Python
+      const users = ['chris', 'nick', 'holly'];
+
+      //something heavy
+
+      const superUser = [
+        {name: "name Zero"},
+        {name: "name One"},
+        {name: "name Two"}
+      ]
+
+      console.log(users[0]);
+      console.log(superUser[1]['name']);
+
+      //declaring variables
+
+      var thing = 'first'; // depricated for the future
+      const otherThing = 'second'; //it could not be reassigned
+      let newThing = 'third'
+
+      newThing = "New value for let declared variable"
+
+      const a = 10;
+      b = 3;
+      c = 15;
+      e = 'my name'
+      d = 'Alx'
+      console.groupCollapsed("SomeGroup");
+          console.log(a+b);
+          console.log(e + ' ' + d);
+          console.log(typeof(a+d))
+      console.groupEnd();
+
+      const x = 'one';
+      const y = 'one';
+      const z = 'ONE'
+
+      let numb = 10;
+      let str = '10';
+
+      let smth;
+      let the = null;
+
+      console.groupCollapsed('Comparisions')
+        console.log(x == y);
+        console.log(x == z);
+        console.log(x == z.toLowerCase());
+      console.groupEnd();
+
+      console.groupCollapsed('compare string and number');
+        console.log(numb == str);
+        console.log(numb === str);
+        console.log(numb != str);
+        console.log(numb !== str);
+      console.groupEnd();
+
+      console.groupCollapsed('undefined');
+        console.log(smth == the);
+
+      console.groupEnd();
+
+    </script>
+
+  </body>
+</html>

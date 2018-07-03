@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started wiht JAVA Script</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+    body, .jumbotron {padding:30px;
+    }
+    body {
+      background: #EFEFEF;
+    }
+    .content{
+      background: #FFF;
+      padding: 50px;
+      font-size: 19px;
+      line-height: 1.5;
+      min-height: 3000px;
+
+    }
+
+    .scroll-line {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 20px;
+      background: #1CE;
+      transition: 1s linear;
+    }
+
+
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class="scroll-line">
+
+    </div>
+
+    <div class="container">
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+
+    </div>
+
+
+
+    <script>
+      //grab everything we need
+
+      const scrollLine = document.querySelector('.scroll-line');
+
+      //difine functions
+
+      function fillScrollLine(){
+        const windowHeight = window.innerHeight;
+        const fullHight = document.body.clientHeight;
+        const scrolled = window.scrollY;
+        const percentScrolled = (scrolled/(fullHight - windowHeight))*100;
+        console.log((percentScrolled*100).toFixed(2));
+        console.log(`${percentScrolled}%`);
+        scrollLine.style.width = `${percentScrolled}%`;
+
+
+      }
+
+
+      //add event listeners
+      window.addEventListener('scroll', fillScrollLine);
+
+
+    </script>
+
+
+
+
+
+  </body>
+</html>

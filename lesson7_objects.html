@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started wiht JAVA Script</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+
+
+
+    <script>
+  const hero = {
+    name: 'Bruce Wane',
+    alias: 'batman',
+    catchphrase: 'To the Batcave!',
+    speak: function(){
+      return 'Attention' + this.catchphrase;
+    },
+    attack: function(sound){
+      return `(punches bad gay) ${sound}`;
+    }
+  };
+
+  //access property
+  const thingTL4 = 'alias';
+  console.log(hero.name);
+  console.log(hero['name']);
+  console.log(hero[thingTL4]);
+// accessing methods
+  console.log(hero.speak());
+  console.log(hero.attack('POWWW'))
+
+
+    </script>
+
+  </body>
+</html>
