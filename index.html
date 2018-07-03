@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started wiht JAVA Script</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+    body, .jumbotron {padding:30px;
+    }
+    body {
+      background: #EFEFEF;
+    }
+    html {
+      overflow-y: scroll;
+    }
+    .accordion {
+      background: #FFF;
+      border-radius: 5px;
+      padding: 30px;
+    }
+    .question {
+      border-top: 1px solid #EEE;
+      padding: 20px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .question h2 {
+
+      font-size: 20px;
+      margin: 0;
+      color: #C00C00;
+
+    }
+
+    .question .glyphicon {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: 0.5s linear;
+
+    }
+
+    .answer {
+      transition: 1s linear;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .answer p{
+      padding: 20px;
+    }
+
+    .accordion li.open .answer {
+      max-height: 150px;
+    }
+
+    .accordion li.open .question .glyphicon {
+      transform: rotate(180deg);
+
+    }
+
+    ul {
+      margin-bottom:  0;
+    }
+
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="accordion">
+        <ul class="list-unstyled">
+          <li class = "open">
+            <div class="question">
+              <h2>Will I be RICH?</h2>
+              <span class = "glyphicon glyphicon-chevron-down"></span>
+            </div>
+
+            <div class="answer">
+              <p>Absolutely! It's just a question of disire!
+              You need to change your maind in order to let himself
+            do the things that make your happy!</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="question">
+              <h2>What's for dinner?</h2>
+              <span class = "glyphicon glyphicon-chevron-down"></span>
+            </div>
+
+            <div class="answer">
+              <p>Absolutely! It's just a question of disire!
+              You need to change your maind in order to let himself
+            do the things that make your happy!</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="question">
+              <h2>Are youre learning JavaScript?</h2>
+              <span class = "glyphicon glyphicon-chevron-down"></span>
+            </div>
+
+            <div class="answer">
+              <p>Absolutely! It's just a question of disire!
+              You need to change your maind in order to let himself
+            do the things that make your happy!</p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <script>
+      //grab everything we need
+      const accordion = document.querySelector('.accordion');
+      const items = accordion.querySelectorAll('li');
+      const question = accordion.querySelectorAll('.question')
+      const answer = document.querySelectorAll('.answer')
+
+      //difine functions
+      function toggleAccordion(){
+        const thisItem = this.parentNode;
+        // console.log(this.parentNode);
+
+
+        items.forEach(item => {
+          if (thisItem == item) {
+            thisItem.classList.toggle('open');
+            return;
+          }
+          item.classList.remove('open');
+        });
+
+      }
+      //add event listeners
+
+      question.forEach(question => question.addEventListener('click', toggleAccordion));
+      answer.forEach(answer => answer.addEventListener ('click', toggleAccordion));
+
+    </script>
+
+
+
+
+
+  </body>
+</html>
