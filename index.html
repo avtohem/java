@@ -28,6 +28,15 @@
       background: #1CE;
       transition: 1s linear;
     }
+    .btnUP{
+      position: fixed;
+      width: 100px;
+      height: 50px;
+      margin-right: 50px;
+      margin-bottom: 50px;
+      bottom: 0;
+      right: 0;
+    }
 
 
 
@@ -47,12 +56,18 @@
 
     </div>
 
+    <button type="button" class="btn btn-primary btn-danger btnUP">
+      UP
+    </button>
+
 
 
     <script>
       //grab everything we need
 
       const scrollLine = document.querySelector('.scroll-line');
+      const buttonUP = document.querySelector('.btnUP');
+      const htmlO =  document.querySelector('html')
 
       //difine functions
 
@@ -66,11 +81,21 @@
         scrollLine.style.width = `${percentScrolled}%`;
 
 
+      };
+
+      function setScrollZero(){
+        // $(`body,html`).animate({
+        //   scrollTop:0
+        // }, 800);
+        window.scrollTo(0,0);
+
       }
 
 
       //add event listeners
       window.addEventListener('scroll', fillScrollLine);
+      buttonUP.addEventListener('click', setScrollZero);
+
 
 
     </script>
